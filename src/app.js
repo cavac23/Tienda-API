@@ -4,6 +4,9 @@ const express = require('express');
 const routesProductos = require('./routes/routesProductos.js');
 
 const routesCategoria = require('./routes/routesCategoria.js');
+
+// arriba, junto a las otras rutas
+const routesAuth = require('./routes/routesAuth.js');
  
 // CREAR APP DE EXPRESS
 const app = express();
@@ -14,6 +17,9 @@ app.use('/productos', routesProductos);
 
 // RUTAS DE CTAGEORIA
 app.use('/categorias', routesCategoria);
+
+// debajo de app.use('/categorias', ...) y ANTES del 404
+app.use('/auth', routesAuth);
 
 // RUTAS NO ENCONTRADAS
 app.use((req, res) => {
