@@ -1,8 +1,7 @@
 //Importar el pool de conexion
  
 const pool = require('../configdb/db');
- 
- 
+  
 //Funciones de Listar (solo las activas)
 async function listarCategorias(){
     const r = await pool.query(
